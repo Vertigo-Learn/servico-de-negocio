@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: negocio-service
+spec:
+  selector:
+    app: servico-de-negocio  
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80 
+      targetPort: 7003 
+
+
+

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servico-de-negocio-deployment
+  labels:
+    app: servico-de-negocio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: servico-de-negocio
+  template:
+    metadata:
+      labels:
+        app: servico-de-negocio
+    spec:
+      containers:
+      - name: servico-de-negocio
+        image: vtglearn/servico-de-negocio
+        ports:
+        - containerPort: 7003
